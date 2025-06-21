@@ -70,7 +70,7 @@ function App() {
           <div className="bg-[#0B3948] min-h-24 flex flex-col items-center space-y-6 p-2">
             <p className='text-4xl font-bold text-white'>Add your Todo</p>
             <div className="input w-full flex space-x-4 justify-center items-center">
-              <input type="text" className='rounded-lg w-3/4 p-1 h-9' onKeyDown={(e) => { if (e.key === 'Enter') {handleClick()}}} value={todo} onChange={handleInput} placeholder='Enter Your Todo' />
+              <input type="text" className='rounded-lg w-3/4 p-1 h-9' onKeyDown={(e) => { if (e.key === 'Enter' && todo.trim().length >= 2) {handleClick()}}} value={todo} onChange={handleInput} placeholder='Enter Your Todo' />
               <button disabled={todo.length === 0} className='bg-red-900 flex justify-center items-center' onClick={handleClick}>
                 <span className="material-icons mx-2 my-1 font-bold text-3xl">add</span>
               </button>
